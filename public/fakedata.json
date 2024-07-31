@@ -1,0 +1,123 @@
+[
+    {
+      "id": "1",
+      "name": "Sergel 20",
+      "image": "sergel.jpg",
+      "description": "Esomeprazole Magnesium Trihydrate",
+      "company": "Healthcare Pharmaceuticals Ltd.",
+      "capsuleInfo": "10 Capsules (1 Strip)",
+      "price": "64.40",
+      "originalPrice": "70.00",
+      "discount": "8% OFF",
+      "doses": ["20mg", "40mg", "500mg", "600mg"]
+    },
+    {
+      "id": "2",
+      "name": "Example Product",
+      "image": "example.jpg",
+      "description": "Example Description",
+      "company": "Example Company",
+      "capsuleInfo": "15 Capsules (1 Strip)",
+      "price": "80.00",
+      "originalPrice": "90.00",
+      "discount": "10% OFF",
+      "doses": ["50mg", "100mg", "150mg"]
+    },
+    {
+      "id": "3",
+      "name": "Paracetamol",
+      "image": "paracetamol.jpg",
+      "description": "Paracetamol",
+      "company": "ABC Pharmaceuticals",
+      "capsuleInfo": "20 Tablets (1 Strip)",
+      "price": "20.00",
+      "originalPrice": "25.00",
+      "discount": "20% OFF",
+      "doses": ["500mg", "1000mg"]
+    },
+    {
+      "id": "4",
+      "name": "Ibuprofen",
+      "image": "ibuprofen.jpg",
+      "description": "Ibuprofen",
+      "company": "XYZ Pharma",
+      "capsuleInfo": "30 Tablets (1 Strip)",
+      "price": "30.00",
+      "originalPrice": "35.00",
+      "discount": "15% OFF",
+      "doses": ["200mg", "400mg"]
+    },
+    {
+      "id": "5",
+      "name": "Aspirin",
+      "image": "aspirin.jpg",
+      "description": "Aspirin",
+      "company": "HealthFirst Inc.",
+      "capsuleInfo": "25 Tablets (1 Strip)",
+      "price": "15.00",
+      "originalPrice": "18.00",
+      "discount": "16% OFF",
+      "doses": ["75mg", "150mg", "300mg"]
+    },
+    {
+      "id": "6",
+      "name": "Cetrizine",
+      "image": "cetrizine.jpg",
+      "description": "Cetrizine Hydrochloride",
+      "company": "Wellness Pharma",
+      "capsuleInfo": "15 Tablets (1 Strip)",
+      "price": "10.00",
+      "originalPrice": "12.00",
+      "discount": "17% OFF",
+      "doses": ["10mg", "20mg"]
+    },
+    {
+      "id": "7",
+      "name": "Metformin",
+      "image": "metformin.jpg",
+      "description": "Metformin Hydrochloride",
+      "company": "Diabetes Care Ltd.",
+      "capsuleInfo": "20 Tablets (1 Strip)",
+      "price": "25.00",
+      "originalPrice": "28.00",
+      "discount": "11% OFF",
+      "doses": ["500mg", "850mg"]
+    },
+    {
+      "id": "8",
+      "name": "Lisinopril",
+      "image": "lisinopril.jpg",
+      "description": "Lisinopril",
+      "company": "Heart Health Pharmaceuticals",
+      "capsuleInfo": "14 Tablets (1 Strip)",
+      "price": "35.00",
+      "originalPrice": "40.00",
+      "discount": "12% OFF",
+      "doses": ["10mg", "20mg"]
+    },
+    {
+      "id": "9",
+      "name": "Omeprazole",
+      "image": "omeprazole.jpg",
+      "description": "Omeprazole",
+      "company": "Stomach Care Pharma",
+      "capsuleInfo": "28 Capsules (1 Strip)",
+      "price": "40.00",
+      "originalPrice": "45.00",
+      "discount": "11% OFF",
+      "doses": ["20mg", "40mg"]
+    },
+    {
+      "id": "10",
+      "name": "Amoxicillin",
+      "image": "amoxicillin.jpg",
+      "description": "Amoxicillin",
+      "company": "Antibiotic Pharma",
+      "capsuleInfo": "30 Capsules (1 Strip)",
+      "price": "50.00",
+      "originalPrice": "55.00",
+      "discount": "9% OFF",
+      "doses": ["250mg", "500mg"]
+    }
+  ]
+  

@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import sergel from "../../assets/sergel.jpg";
-const Card = () => {
+const Card = ({card}) => {
+    const { name, image, description, company, capsuleInfo, price, originalPrice, discount, doses } = card;
     const [dropdown, setDropDown] = useState(false)
     const toggleDropdown = () => {
         setDropDown(!dropdown)
       };
+   
   return (
-    <div>
+   
       <div className=" w-72 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
         <img
           className="object-cover object-center w-full h-56"
@@ -15,7 +17,7 @@ const Card = () => {
         />
         <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200 px-6 pt-4 pb-2">
           <h1 className="text-xl font-semibold text-gray-800 dark:text-white">
-            Sergel 20
+        {originalPrice}
           </h1>
           <div className="relative inline-block text-left">
       <h1 onClick={toggleDropdown} className="px-2 text-gray-600 text-sm cursor-pointer">
@@ -41,10 +43,10 @@ const Card = () => {
         </div>
         <div className="px-6 py-2">
           <h1 className=" text-[#60a87e] dark:text-white">
-            Esomeprazole Magnesium Trihydrate
+          { description}
           </h1>
           <p className="py-2 text-gray-600 dark:text-gray-400">
-            Healthcare Pharmaceuticals Ltd.
+           {company}
           </p>
           <p className="text-gray-600 font-light text-sm">
             10 Capsules (1 Strip)
@@ -59,7 +61,7 @@ const Card = () => {
           </h1>
         </div>
       </div>
-    </div>
+  
   );
 };
 
