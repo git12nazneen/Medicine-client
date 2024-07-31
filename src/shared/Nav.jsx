@@ -1,16 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import logo from "../assets/logo.png";
 import { IoLocationSharp } from "react-icons/io5";
 import { FaBars } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
+import { AppContext } from "../hooks/AppContext";
+
+
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  // navbar collaps
+  const { sideCollaps, setSideCollaps } =  useContext(AppContext)
+  const toggleNavbar = () =>{
+    setSideCollaps(!sideCollaps)
+  }
 
   return (
     <nav className="relative bg-white shadow dark:bg-gray-800">
       <div className="container px-6 py-3 mx-auto md:flex">
         <div className="flex items-center justify-between">
-          <div className="bg-[#0e7673] px-2 py-2 rounded text-white mx-3">
+          <div onClick={toggleNavbar} className="bg-[#0e7673] px-2 py-2 rounded text-white mx-3">
             <FaBars />
           </div>
           <a href="#">

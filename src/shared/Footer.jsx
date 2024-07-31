@@ -136,6 +136,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <div className="text-center justify-center py-10 text-white font-light border-t border-white">
+        <p>©2021-2024 Poonno.com. All rights reserved.</p>
+      </div>
     </div>
   );
 };
