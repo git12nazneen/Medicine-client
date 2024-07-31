@@ -20,7 +20,7 @@ const Footer = () => {
         <div className="space-y-3 lg:pr-10">
           <div className="flex items-center ">
             <a href="#">
-              <img className="w-20 h-8 " src={logo} alt="" />
+              <img className="w-32 h-20  " src={logo} alt="" />
             </a>
             <span className="font-bold text-white text-3xl">Medicine</span>
           </div>
