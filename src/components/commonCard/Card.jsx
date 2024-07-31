@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import sergel from "../../assets/sergel.jpg";
 const Card = () => {
+    const [dropdown, setDropDown] = useState(false)
+    const toggleDropdown = () => {
+        setDropDown(!dropdown)
+      };
   return (
     <div>
       <div className=" w-72 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
@@ -13,7 +17,27 @@ const Card = () => {
           <h1 className="text-xl font-semibold text-gray-800 dark:text-white">
             Sergel 20
           </h1>
-          <h1 className="px-2 text-gray-600 text-sm">Capsule- (20mg)</h1>
+          <div className="relative inline-block text-left">
+      <h1 onClick={toggleDropdown} className="px-2 text-gray-600 text-sm cursor-pointer">
+        Capsule- (20mg)
+      </h1>
+      {dropdown && (
+        <div className="absolute -right-7 mt-2 w-60 bg-gray-300 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg">
+          <ul className="py-1">
+            <li className="px-4 py-2 border-b border-gray-500 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">
+            40mg
+            </li>
+            <li className="px-4 py-2  border-b border-gray-500 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">
+            500mg
+            </li>
+            <li className="px-4 py-2  text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">
+            600mg
+            </li>
+          </ul>
+        </div>
+      )}
+    </div>
+
         </div>
         <div className="px-6 py-2">
           <h1 className=" text-[#60a87e] dark:text-white">
