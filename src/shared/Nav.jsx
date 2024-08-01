@@ -6,6 +6,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { AppContext } from "../hooks/AppContext";
 import ShoppingModal from "../components/commonCard/ShoppingModal";
 import { Link } from "react-router-dom";
+import Modal from "../components/Modal";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,7 @@ const Nav = () => {
   }
 
   return (
-    <nav className="relative bg-white shadow dark:bg-gray-800">
+    <nav className="sticky top-0 z-50 bg-white shadow dark:bg-gray-800 ">
       <div className="container px-6 py-3 mx-auto md:flex">
         <div className="flex items-center justify-between">
           <div
@@ -30,9 +31,9 @@ const Nav = () => {
           >
             <FaBars />
           </div>
-          <a href="#">
+          <Link to='/'>
             <img className="w-20 h-10 " src={logo} alt="" />
-          </a>
+          </Link>
           <span className="font-bold text-red-600 text-3xl">Medicine</span>
           <div className="flex lg:hidden">
             <button
@@ -129,7 +130,8 @@ const Nav = () => {
       </div>
       {
         shoppingModal && (
-         <ShoppingModal></ShoppingModal>
+        //  <ShoppingModal></ShoppingModal>
+        <Modal></Modal>
         )
       }
     </nav>
