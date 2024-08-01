@@ -4,21 +4,29 @@ import { IoLocationSharp } from "react-icons/io5";
 import { FaBars } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { AppContext } from "../hooks/AppContext";
-
+import ShoppingModal from "../components/commonCard/ShoppingModal";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [shoppingModal, setShoppingModal] = useState(false);
   // navbar collaps
-  const { sideCollaps, setSideCollaps } =  useContext(AppContext)
-  const toggleNavbar = () =>{
-    setSideCollaps(!sideCollaps)
+  const { sideCollaps, setSideCollaps } = useContext(AppContext);
+  const toggleNavbar = () => {
+    setSideCollaps(!sideCollaps);
+  };
+
+  const modalShopping = () =>{
+    setShoppingModal(!shoppingModal)
   }
 
   return (
     <nav className="relative bg-white shadow dark:bg-gray-800">
       <div className="container px-6 py-3 mx-auto md:flex">
         <div className="flex items-center justify-between">
-          <div onClick={toggleNavbar} className="bg-[#0e7673] px-2 py-2 rounded text-white mx-3">
+          <div
+            onClick={toggleNavbar}
+            className="bg-[#0e7673] px-2 py-2 rounded text-white mx-3"
+          >
             <FaBars />
           </div>
           <a href="#">
@@ -105,7 +113,7 @@ const Nav = () => {
               <h1>Sirajgonj</h1>
             </div>
 
-            <div className="bg-[#0e7673] rounded-full p-3 text-white items-center mx-3">
+            <div onClick={modalShopping} className="bg-[#0e7673] rounded-full p-3 text-white items-center mx-3">
               <FaShoppingCart />
             </div>
 
@@ -118,6 +126,12 @@ const Nav = () => {
           </div>
         </div>
       </div>
+      {
+        shoppingModal && (
+          
+          <ShoppingModal></ShoppingModal>
+        )
+      }
     </nav>
   );
 };
