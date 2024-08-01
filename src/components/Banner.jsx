@@ -19,7 +19,7 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className="my-10 mx-5 md:max-w-4xl lg:max-w-5xl">
+    <div className="my-10 mx-5 w-auto md:max-w-4xl lg:max-w-5xl">
       <h1 className="font-bold text-2xl">OTC Medicine</h1>
       <div className="relative">
         <ReactSwiper
