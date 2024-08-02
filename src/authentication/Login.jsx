@@ -1,18 +1,63 @@
-import React from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import "../components/login.css";
 import { useForm } from "react-hook-form";
-import logo from "../assets/logo.png";
-import { Link } from "react-router-dom";
-const Login = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+import swal from "sweetalert";
+import { getAuth } from "firebase/auth";
+import { app } from "../../firebase.config";
+import UseAxiosPublic from "../hooks/UseAxiosPublice";
+import useAuth from "../hooks/useAuth";
 
-  const onSubmit = (data) => {
-    // Handle form submission
-    console.log(data);
-  };
+
+
+const Login = () => {
+  const axiosPublic = UseAxiosPublic()
+ const {googleLogin, signIn}= useAuth()
+ const auth = getAuth(app);
+ const location = useLocation();
+ const navigate = useNavigate();
+ console.log("location in login", location);
+
+const {
+    register,formState: { errors },handleSubmit,} = useForm()
+     const onSubmit = (data) => {
+    const {email, password} = data
+
+    signIn(email, password)
+    .then(result =>{
+        swal({
+            text: "Success fully login",
+            icon: "success"
+          });
+        console.log(result.user)
+        navigate(location?.state ? location.state : '/');
+    })
+    .catch(error =>{
+        swal({
+            text: "Sign in failed!",
+            icon: "error"
+          });
+        console.error(error)
+        // setError(error.message)
+    })
+}
+
+
+const handleSocialLogin = (socialProvider) => {
+  socialProvider()
+  .then((result) => {
+    console.log(result.user);
+    const userInfo = {
+      email: result.user?.email,
+      name: result.user?.displayName
+    };
+    axiosPublic.post('/users', userInfo)
+      .then(res => {
+        console.log(res.data);
+        navigate(location?.state ? location.state : '/');
+   
+      });
+  });
+};
 
   return (
     <div>

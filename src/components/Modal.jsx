@@ -74,7 +74,6 @@ const products = [
   // More products...
 ]
 
-// Server theke data fatch korar por products remove kore diben .ok r map thik moto korben .
 
 export default function Modal() {
   const [open, setOpen] = useState(true)

@@ -1,19 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import logo from "../assets/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FaFacebook, FaRegEyeSlash } from "react-icons/fa";
+import { IoEyeOutline } from "react-icons/io5";
+import swal from "sweetalert";
+import { getAuth } from "firebase/auth";
+import { app } from "../../firebase.config";
+import useAuth from "../hook/useAuth";
+import PageTitle from "./PageTitle";
+import UseAxiosPublic from "../hook/UseAxiosPublic";
+import Swal from "sweetalert2";
+import toast from "react-hot-toast";
+
 
 const Register = () => {
+  const axiosPublic = UseAxiosPublic()
+  const {createUser,  updateUserProfile}= useAuth()
+  const auth = getAuth(app);
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log('location in login', location)
+  const from = location.state?.from?.pathname || "/";
+  console.log("state in location", location.state);
+ 
+
   const {
     register,
     handleSubmit,
+    watch,
+    reset,
     formState: { errors },
   } = useForm();
-
   const onSubmit = (data) => {
-    // Handle form submission
     console.log(data);
+    createUser(data.email, data.password).then((result) => {
+      const loggedUser = result.user;
+      console.log(loggedUser);
+     
+      toast.success('Successfully register')
+      updateUserProfile(data.name, data.photoURL)
+        .then(() => {
+          // create user entry in the db
+          const userInfo = {
+            name: data.name,
+            email: data.email,
+          };
+          axiosPublic.post("/users", userInfo).then((res) => {
+            if (res.data.insertedId) {
+                console.log('user added db')
+              reset();
+         
+              toast.success('Successfully register')
+              navigate(from, { replace: true });
+            }
+          });
+          console.log("user info update");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    });
   };
+
+  console.log(watch("name"));
+
 
   return (
     <div>
