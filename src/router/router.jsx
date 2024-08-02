@@ -3,8 +3,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "../layout/Root";
 import Error from "../error/Error";
 import Home from "../pages/homePage/Home";
-import Login from '../authentication/Login';
 import Register from '../authentication/Register';
+import Login from '../authentication/Login';
 
 const router = createBrowserRouter([
     {

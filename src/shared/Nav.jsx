@@ -4,7 +4,6 @@ import { IoLocationSharp } from "react-icons/io5";
 import { FaBars } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { AppContext } from "../hooks/AppContext";
-import ShoppingModal from "../components/commonCard/ShoppingModal";
 import { Link } from "react-router-dom";
 import Modal from "../components/Modal";
 

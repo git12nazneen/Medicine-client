@@ -1,12 +1,11 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import "../components/login.css";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
 import { getAuth } from "firebase/auth";
 import { app } from "../../firebase.config";
 import UseAxiosPublic from "../hooks/UseAxiosPublice";
 import useAuth from "../hooks/useAuth";
-
+import logo from "../assets/logo.png";
 
 
 const Login = () => {
@@ -50,18 +49,18 @@ const handleSocialLogin = (socialProvider) => {
       email: result.user?.email,
       name: result.user?.displayName
     };
-    axiosPublic.post('/users', userInfo)
-      .then(res => {
-        console.log(res.data);
-        navigate(location?.state ? location.state : '/');
+    // axiosPublic.post('/users', userInfo)
+    //   .then(res => {
+    //     console.log(res.data);
+    //     navigate(location?.state ? location.state : '/');
    
-      });
+    //   });
   });
 };
 
   return (
     <div>
-      <section className="bg-gray-200 dark:bg-gray-900">
+      <section className="bg-gray-300 dark:bg-gray-900">
         <div className="max-w-5xl px-6 py-24 mx-auto lg:py-32">
           <div className="lg:flex">
             <div className="lg:w-1/2">

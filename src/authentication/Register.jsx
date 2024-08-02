@@ -6,12 +6,11 @@ import { IoEyeOutline } from "react-icons/io5";
 import swal from "sweetalert";
 import { getAuth } from "firebase/auth";
 import { app } from "../../firebase.config";
-import useAuth from "../hook/useAuth";
-import PageTitle from "./PageTitle";
-import UseAxiosPublic from "../hook/UseAxiosPublic";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
-
+import useAuth from "../hooks/useAuth";
+import UseAxiosPublic from "../hooks/UseAxiosPublice";
+import logo from "../assets/logo.png";
 
 const Register = () => {
   const axiosPublic = UseAxiosPublic()
@@ -67,7 +66,7 @@ const Register = () => {
 
   return (
     <div>
-      <section className="bg-gray-200 dark:bg-gray-900">
+      <section className="bg-gray-300 dark:bg-gray-900">
         <div className="max-w-5xl px-6 py-24 mx-auto lg:py-32">
           <div className="lg:flex">
             <div className="lg:w-1/2">
