@@ -15,6 +15,10 @@ const Dashboard = () => {
         <ul className="menu">
           {isAdmin ? (
             <>
+
+              {/* <li>
+                <NavLink to="/dashboard/addProduct">Add Product</NavLink>
+              </li>  */}
               <li>
                 <NavLink to="/dashboard/allOrder">All orders</NavLink>
               </li>
@@ -36,6 +40,9 @@ const Dashboard = () => {
                 <NavLink to="/dashboard/profile">
                   Participent Profile
                 </NavLink>
+                <li>
+                <NavLink to="/dashboard/addProduct">Add Product</NavLink>
+              </li> 
               </li>
             </>
           )}
