@@ -6,8 +6,13 @@ import { FaShoppingCart } from "react-icons/fa";
 import { AppContext } from "../hooks/AppContext";
 import { Link } from "react-router-dom";
 import Modal from "../components/Modal";
+import useAuth from "../hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Nav = () => {
+  const { user, logOut } = useAuth();
+  console.log("nav,", user);
+
   const [isOpen, setIsOpen] = useState(false);
   const [shoppingModal, setShoppingModal] = useState(false);
   // navbar collaps
@@ -16,9 +21,16 @@ const Nav = () => {
     setSideCollaps(!sideCollaps);
   };
 
-  const modalShopping = () =>{
-    setShoppingModal(!shoppingModal)
-  }
+  const modalShopping = () => {
+    setShoppingModal(!shoppingModal);
+  };
+
+  // logout implement
+
+  const handleSignOut = () => {
+    logOut().then().catch();
+    toast.success("Logout successfull ");
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-white shadow dark:bg-gray-800 ">
@@ -30,7 +42,7 @@ const Nav = () => {
           >
             <FaBars />
           </div>
-          <Link to='/'>
+          <Link to="/">
             <img className="w-20 h-10 " src={logo} alt="" />
           </Link>
           <span className="font-bold text-red-600 text-3xl">Medicine</span>
@@ -114,25 +126,46 @@ const Nav = () => {
               <h1>Sirajgonj</h1>
             </div>
 
-            <div onClick={modalShopping} className="bg-[#0e7673] rounded-full p-3 text-white items-center mx-3">
+            <div
+              onClick={modalShopping}
+              className="bg-[#0e7673] rounded-full p-3 text-white items-center mx-3"
+            >
               <FaShoppingCart />
             </div>
-
-            <div
-              href="#"
-              className="px-4 py-2 text-white font-xl transition-colors duration-300 transform rounded dark:text-gray-200 bg-[#0e7673] hover:bg-red-600 dark:hover:bg-gray-700 md:mx-2"
-            >
-             <Link to='/login'> Login / SignUp</Link>
-            </div>
+          </div>
+          <div className="flex flex-col cursor-pointer">
+            {user ? (
+              <div className="flex gap-3">
+                <div
+                  onClick={handleSignOut}
+                  className="px-4 py-3 bg-[#0e7673] rounded-sm text-white hover:text-black hover:bg-neutral-300  transition font-semibold cursor-pointer"
+                >
+                  Logout
+                </div>
+                <Link
+                  to="/dashboard/profile"
+                  className="px-4 py-3 bg-[#0e7673] rounded-sm text-white hover:text-black hover:bg-neutral-300 transition font-semibold"
+                >
+                  Dashboard
+                </Link>
+              </div>
+            ) : (
+              <>
+                <div
+                  href="#"
+                  className="px-4 py-2 text-white font-xl transition-colors duration-300 transform rounded dark:text-gray-200 bg-[#0e7673] hover:bg-red-600 dark:hover:bg-gray-700 md:mx-2"
+                >
+                  <Link to="/login"> Login / SignUp</Link>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
-      {
-        shoppingModal && (
+      {shoppingModal && (
         //  <ShoppingModal></ShoppingModal>
         <Modal></Modal>
-        )
-      }
+      )}
     </nav>
   );
 };
