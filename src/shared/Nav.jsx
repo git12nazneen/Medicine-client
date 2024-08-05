@@ -143,7 +143,7 @@ const Nav = () => {
                   Logout
                 </div>
                 <Link
-                  to="/dashboard/profile"
+                  to="/dashboard"
                   className="px-4 py-3 bg-[#0e7673] rounded-sm text-white hover:text-black hover:bg-neutral-300 transition font-semibold"
                 >
                   Dashboard

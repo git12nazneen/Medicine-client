@@ -16,9 +16,12 @@ const Dashboard = () => {
           {isAdmin ? (
             <>
 
-              {/* <li>
+              <li>
                 <NavLink to="/dashboard/addProduct">Add Product</NavLink>
-              </li>  */}
+              </li> 
+              <li>
+                <NavLink to="/dashboard/allUsers">All Users</NavLink>
+              </li> 
               <li>
                 <NavLink to="/dashboard/allOrder">All orders</NavLink>
               </li>
@@ -40,10 +43,9 @@ const Dashboard = () => {
                 <NavLink to="/dashboard/profile">
                   Participent Profile
                 </NavLink>
-                <li>
-                <NavLink to="/dashboard/addProduct">Add Product</NavLink>
-              </li> 
               </li>
+               
+        
             </>
           )}
           {/* shared li */}

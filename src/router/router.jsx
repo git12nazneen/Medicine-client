@@ -14,6 +14,7 @@ import Profile from '../dashboard/Profile';
 import { FcPrivacy } from 'react-icons/fc';
 import PrivateRoute from '../provider/PrivateRoute';
 import AddProduct from '../dashboard/AddProduct';
+import AllUsers from '../dashboard/AllUsers';
 
 const router = createBrowserRouter([
     {
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
         {
           path:'profile',
           element:<Profile></Profile>
+        },
+        {
+          path:'allUsers',
+          element:<AllUsers></AllUsers>
         }
       ]
     }
