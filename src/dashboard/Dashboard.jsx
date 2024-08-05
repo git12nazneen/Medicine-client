@@ -15,9 +15,8 @@ const Dashboard = () => {
         <ul className="menu">
           {isAdmin ? (
             <>
-
               <li>
-                <NavLink to="/dashboard/addProduct">Add Product</NavLink>
+                <NavLink to="/dashboard/addFrom">Add Product</NavLink>
               </li> 
               <li>
                 <NavLink to="/dashboard/allUsers">All Users</NavLink>

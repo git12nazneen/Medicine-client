@@ -13,8 +13,8 @@ import SalesAmount from '../dashboard/SalesAmount';
 import Profile from '../dashboard/Profile';
 import { FcPrivacy } from 'react-icons/fc';
 import PrivateRoute from '../provider/PrivateRoute';
-import AddProduct from '../dashboard/AddProduct';
 import AllUsers from '../dashboard/AllUsers';
+import AddFrom from '../dashboard/AddFrom';
 
 const router = createBrowserRouter([
     {
@@ -44,8 +44,8 @@ const router = createBrowserRouter([
           element:<Allorder></Allorder>
         },
         {
-          path:'addProduct',
-          element:<AddProduct></AddProduct>
+          path:'addFrom',
+          element:<AddFrom></AddFrom>
         },
         {
           path:'customer',
