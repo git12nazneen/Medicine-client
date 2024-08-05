@@ -41,13 +41,13 @@ const Card = ({ card }) => {
             <div className="absolute -right-7 mt-2 w-60 bg-gray-300 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg">
               <ul className="py-1">
                 <li className="px-4 py-2 border-b border-gray-500 text-gray-700 dark:text-gray-300 hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">
-                  40mg
+                 {doses[1]}
                 </li>
                 <li className="px-4 py-2 border-b border-gray-500 text-gray-700 dark:text-gray-300 hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">
-                  500mg
+                  {doses[2]}
                 </li>
                 <li className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-white dark:hover:bg-gray-700 cursor-pointer">
-                  600mg
+                 {doses[3]}
                 </li>
               </ul>
             </div>
@@ -62,15 +62,15 @@ const Card = ({ card }) => {
           {company}
         </p>
         <p className="text-gray-600 font-light text-sm group-hover:text-white">
-          10 Capsules (1 Strip)
+        {capsuleInfo}
         </p>
         <div className="flex gap-7 py-3">
-          <h2 className="text-sm font-bold group-hover:text-white">৳ 64.40</h2>
+          <h2 className="text-sm font-bold group-hover:text-white">৳ {originalPrice}</h2>
           <h2 className="text-sm font-light group-hover:text-white text-gray-500">
-            ৳ 70.00
+            ৳ {price}
           </h2>
           <h2 className="text-sm font-light group-hover:text-white text-red-600">
-            8% OFF
+          {discount}% OFF
           </h2>
         </div>
         <h1 className="text-white bg-[#0e7673] text-center py-3 rounded-md mb-2">
