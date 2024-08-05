@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import sergel from "../../assets/sergel.jpg";
+import { useMutation } from "@tanstack/react-query";
+import toast from "react-hot-toast";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const Card = ({ card }) => {
   const {
@@ -17,6 +20,45 @@ const Card = ({ card }) => {
 
   const toggleDropdown = () => {
     setDropDown(!dropdown);
+  };
+
+  const axiosSecure = useAxiosSecure();
+  const { mutateAsync } = useMutation({
+    mutationFn: async (cardsData) => {
+      try {
+        const { data } = await axiosSecure.post("/cards", cardsData);
+        return data;
+      } catch (error) {
+        console.error("Error posting card data:", error);
+        throw error;
+      }
+    },
+    onSuccess: () => {
+      toast.success("Added Product Successfully!");
+    },
+    onError: () => {
+      toast.error("Failed to add product");
+    },
+  });
+
+  const handleAddToCart = async () => {
+    const cardsData = {
+      name,
+      image,
+      description,
+      company,
+      capsuleInfo,
+      price,
+      originalPrice,
+      discount,
+      doses,
+    };
+
+    try {
+      await mutateAsync(cardsData);
+    } catch (error) {
+      console.error("Error in handleAddToCart:", error);
+    }
   };
 
   return (
@@ -40,15 +82,14 @@ const Card = ({ card }) => {
           {dropdown && (
             <div className="absolute -right-7 mt-2 w-60 bg-gray-300 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg">
               <ul className="py-1">
-                <li className="px-4 py-2 border-b border-gray-500 text-gray-700 dark:text-gray-300 hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">
-                 {doses[1]}
-                </li>
-                <li className="px-4 py-2 border-b border-gray-500 text-gray-700 dark:text-gray-300 hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">
-                  {doses[2]}
-                </li>
-                <li className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 hover:text-white dark:hover:bg-gray-700 cursor-pointer">
-                 {doses[3]}
-                </li>
+                {doses.map((dose, index) => (
+                  <li
+                    key={index}
+                    className="px-4 py-2 border-b border-gray-500 text-gray-700 dark:text-gray-300 hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
+                  >
+                    {dose}
+                  </li>
+                ))}
               </ul>
             </div>
           )}
@@ -62,20 +103,25 @@ const Card = ({ card }) => {
           {company}
         </p>
         <p className="text-gray-600 font-light text-sm group-hover:text-white">
-        {capsuleInfo}
+          {capsuleInfo}
         </p>
         <div className="flex gap-7 py-3">
-          <h2 className="text-sm font-bold group-hover:text-white">৳ {originalPrice}</h2>
+          <h2 className="text-sm font-bold group-hover:text-white">
+            ৳ {originalPrice}
+          </h2>
           <h2 className="text-sm font-light group-hover:text-white text-gray-500">
             ৳ {price}
           </h2>
           <h2 className="text-sm font-light group-hover:text-white text-red-600">
-          {discount}% OFF
+            {discount}% OFF
           </h2>
         </div>
-        <h1 className="text-white bg-[#0e7673] text-center py-3 rounded-md mb-2">
+        <button
+          onClick={handleAddToCart}
+          className="text-white bg-[#0e7673] text-center py-3 rounded-md mb-2 w-full"
+        >
           Add to cart
-        </h1>
+        </button>
       </div>
     </div>
   );
