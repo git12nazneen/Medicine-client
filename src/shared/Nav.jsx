@@ -126,12 +126,17 @@ const Nav = () => {
               <h1>Sirajgonj</h1>
             </div>
 
-            <div
+           <div>
+           <div
               onClick={modalShopping}
-              className="bg-[#0e7673] rounded-full p-3 text-white items-center mx-3"
+              className="bg-[#0e7673] rounded-full p-3 text-white items-center mx-3 relative"
             >
               <FaShoppingCart />
             </div>
+            <div className="absolute top-0 px-2 bg-red-700 rounded-full ">
+            <p className="text-white">0</p>
+            </div>
+           </div>
           </div>
           <div className="flex flex-col cursor-pointer">
             {user ? (

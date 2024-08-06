@@ -87,7 +87,7 @@ export default function Modal() {
                                 <p className="text-gray-500">Qty {product.capsuleInfo}</p>
 
                                 <div className="flex">
-                                  <button type="button" className="font-medium text-indigo-600 hover:text-indigo-500">
+                                  <button type="button" className="font-medium text-[#0e7673] hover:text-indigo-500">
                                     Remove
                                   </button>
                                 </div>
@@ -100,16 +100,23 @@ export default function Modal() {
                   </div>
                 </div>
 
-                <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
+                <div className="border-t space-y-2 border-gray-200 px-4 py-6 sm:px-6">
                   <div className="flex justify-between text-base font-medium text-gray-900">
-                    <p>Subtotal</p>
+                    <p>Total</p>
                     <p>$262.00</p>
+                  </div>
+                   <div className="flex justify-between text-base font-medium text-gray-900">
+                    <p>Discount</p>
+                    <p>$20.00</p>
+                  </div> <div className="flex justify-between text-base font-medium text-gray-900">
+                    <p>Subtotal</p>
+                    <p>$242.00</p>
                   </div>
                   <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                   <div className="mt-6">
                     <a
                       href="#"
-                      className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                      className="flex items-center justify-center rounded-md border border-transparent bg-[#0e7673] px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                     >
                       Checkout
                     </a>
@@ -120,7 +127,7 @@ export default function Modal() {
                       <button
                         type="button"
                         onClick={() => setOpen(false)}
-                        className="font-medium text-indigo-600 hover:text-indigo-500"
+                        className="font-medium text-[#0e7673] hover:text-indigo-500"
                       >
                         Continue Shopping
                         <span aria-hidden="true"> &rarr;</span>
