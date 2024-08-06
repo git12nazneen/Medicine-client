@@ -19,13 +19,10 @@ const Dashboard = () => {
                 <NavLink to="/dashboard/addFrom">Add Product</NavLink>
               </li> 
               <li>
-                <NavLink to="/dashboard/allUsers">All Users</NavLink>
+                <NavLink to="/dashboard/allUsers">All Customers</NavLink>
               </li> 
               <li>
                 <NavLink to="/dashboard/allOrder">All orders</NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/customer">Customers</NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/productPage">All Product</NavLink>
@@ -54,7 +51,7 @@ const Dashboard = () => {
           </li>
         </ul>
       </div>
-      <div className="flex-1">
+      <div className="flex-1 mx-5">
         <Outlet></Outlet>
       </div>
     </div>
