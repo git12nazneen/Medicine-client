@@ -168,7 +168,6 @@ const Nav = () => {
         </div>
       </div>
       {shoppingModal && (
-        //  <ShoppingModal></ShoppingModal>
         <Modal></Modal>
       )}
     </nav>
