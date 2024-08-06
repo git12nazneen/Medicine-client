@@ -7,7 +7,6 @@ import Register from '../authentication/Register';
 import Login from '../authentication/Login';
 import Dashboard from '../dashboard/Dashboard';
 import Allorder from '../dashboard/Allorder';
-import Customer from '../dashboard/Customer';
 import ProductPage from '../dashboard/ProductPage';
 import SalesAmount from '../dashboard/SalesAmount';
 import Profile from '../dashboard/Profile';
@@ -15,6 +14,8 @@ import { FcPrivacy } from 'react-icons/fc';
 import PrivateRoute from '../provider/PrivateRoute';
 import AllUsers from '../dashboard/AllUsers';
 import AddFrom from '../dashboard/AddFrom';
+import DetailsCard from '../components/DetailsCard';
+import Card from '../components/commonCard/Card';
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,16 @@ const router = createBrowserRouter([
         },{
           path:'/register',
           element:<Register></Register>
+        },
+        {
+          path:'/products/:id',
+          element:<DetailsCard></DetailsCard>,
+      
+        },
+        {
+          path:'/products/:id',
+          element:<Card></Card>,
+          loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`)
         }
       ]
     },
@@ -47,10 +58,7 @@ const router = createBrowserRouter([
           path:'addFrom',
           element:<AddFrom></AddFrom>
         },
-        {
-          path:'customer',
-          element:<Customer></Customer>
-        },
+
         {
           path:'productPage',
           element:<ProductPage></ProductPage>
