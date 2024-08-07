@@ -1,7 +1,7 @@
 [
     {
             "name": "Sergel 20",
-      "image": "https://ibb.co/SKjRJjN",
+      "image": "https://i.ibb.co/P5LwtLx/sergel.jpg",
       "description": "Esomeprazole Magnesium Trihydrate",
       "company": "Healthcare Pharmaceuticals Ltd.",
       "capsuleInfo": "10 Capsules (1 Strip)",
@@ -12,7 +12,7 @@
     },
     {
             "name": "Example Product",
-      "image": "https://ibb.co/SKjRJjN",
+      "image": "https://i.ibb.co/P5LwtLx/sergel.jpg",
       "description": "Example Description",
       "company": "Example Company",
       "capsuleInfo": "15 Capsules (1 Strip)",
@@ -23,7 +23,7 @@
     },
     {
             "name": "Paracetamol",
-      "image": "https://ibb.co/SKjRJjN",
+      "image": "https://i.ibb.co/P5LwtLx/sergel.jpg",
       "description": "Paracetamol",
       "company": "ABC Pharmaceuticals",
       "capsuleInfo": "20 Tablets (1 Strip)",
@@ -34,7 +34,7 @@
     },
     {
             "name": "Ibuprofen",
-      "image": "https://ibb.co/SKjRJjN",
+      "image": "https://i.ibb.co/P5LwtLx/sergel.jpg",
       "description": "Ibuprofen",
       "company": "XYZ Pharma",
       "capsuleInfo": "30 Tablets (1 Strip)",
@@ -45,7 +45,7 @@
     },
     {
             "name": "Aspirin",
-      "image": "https://ibb.co/SKjRJjN",
+      "image": "https://i.ibb.co/P5LwtLx/sergel.jpg",
       "description": "Aspirin",
       "company": "HealthFirst Inc.",
       "capsuleInfo": "25 Tablets (1 Strip)",
@@ -56,7 +56,7 @@
     },
     {
             "name": "Cetrizine",
-      "image": "https://ibb.co/SKjRJjN",
+      "image": "https://i.ibb.co/P5LwtLx/sergel.jpg",
       "description": "Cetrizine Hydrochloride",
       "company": "Wellness Pharma",
       "capsuleInfo": "15 Tablets (1 Strip)",
@@ -67,7 +67,7 @@
     },
     {
             "name": "Metformin",
-      "image": "https://ibb.co/SKjRJjN",
+      "image": "https://i.ibb.co/P5LwtLx/sergel.jpg",
       "description": "Metformin Hydrochloride",
       "company": "Diabetes Care Ltd.",
       "capsuleInfo": "20 Tablets (1 Strip)",
@@ -78,7 +78,7 @@
     },
     {
             "name": "Lisinopril",
-      "image": "https://ibb.co/SKjRJjN",
+      "image": "https://i.ibb.co/P5LwtLx/sergel.jpg",
       "description": "Lisinopril",
       "company": "Heart Health Pharmaceuticals",
       "capsuleInfo": "14 Tablets (1 Strip)",
@@ -89,7 +89,7 @@
     },
     {
             "name": "Omeprazole",
-      "image": "https://ibb.co/SKjRJjN",
+      "image": "https://i.ibb.co/P5LwtLx/sergel.jpg",
       "description": "Omeprazole",
       "company": "Stomach Care Pharma",
       "capsuleInfo": "28 Capsules (1 Strip)",
@@ -101,7 +101,7 @@
     {
       
       "name": "Amoxicillin",
-      "image": "https://ibb.co/SKjRJjN",
+      "image": "https://i.ibb.co/P5LwtLx/sergel.jpg",
       "description": "Amoxicillin",
       "company": "Antibiotic Pharma",
       "capsuleInfo": "30 Capsules (1 Strip)",

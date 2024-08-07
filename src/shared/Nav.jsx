@@ -8,10 +8,12 @@ import { Link } from "react-router-dom";
 import Modal from "../components/Modal";
 import useAuth from "../hooks/useAuth";
 import toast from "react-hot-toast";
+import useCard from "../hooks/useCard";
 
 const Nav = () => {
   const { user, logOut } = useAuth();
   console.log("nav,", user);
+  const [cards, refetch] = useCard()
 
   const [isOpen, setIsOpen] = useState(false);
   const [shoppingModal, setShoppingModal] = useState(false);
@@ -134,7 +136,7 @@ const Nav = () => {
               <FaShoppingCart />
             </div>
             <div className="absolute top-0 px-2 bg-red-700 rounded-full ">
-            <p className="text-white">0</p>
+            <p className="text-white">{cards.length}</p>
             </div>
            </div>
           </div>

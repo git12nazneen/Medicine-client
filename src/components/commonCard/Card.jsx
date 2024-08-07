@@ -4,8 +4,10 @@ import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const Card = ({ card }) => {
+  const {user} = useAuth()
   const {
     name,
     image,
@@ -56,6 +58,8 @@ const Card = ({ card }) => {
       originalPrice,
       discount,
       doses,
+      email:user.email,
+      userName:user.displayName,
     };
 
     try {

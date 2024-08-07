@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Autoplay, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import "swiper/css";
