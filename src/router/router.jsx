@@ -16,6 +16,7 @@ import AllUsers from '../dashboard/AllUsers';
 import AddFrom from '../dashboard/AddFrom';
 import DetailsCard from '../components/DetailsCard';
 import Card from '../components/commonCard/Card';
+import Payment from '../components/Payment';
 
 const router = createBrowserRouter([
     {
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
         {
           path:'allUsers',
           element:<AllUsers></AllUsers>
+        },
+        {
+          path:'payment',
+          element:<Payment></Payment>
         }
       ]
     }

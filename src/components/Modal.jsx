@@ -1,9 +1,12 @@
+
+
 import { useState } from 'react';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import useAuth from '../hooks/useAuth';
 import useCard from '../hooks/useCard';
 import ProductModal from './ProductModal';
+import { Link } from 'react-router-dom';
 
 const Modal = () => {
   const [open, setOpen] = useState(true);
@@ -12,7 +15,9 @@ const Modal = () => {
   const { user } = useAuth();
   const [cards] = useCard();
 
-  
+  // const email = user.email;
+  // console.log(email)
+
   // Calculate the subtotal price (before discounts)
   const subtotalPrice = cards.reduce((total, item) => total + (parseFloat(item.price) || 0), 0);
 
@@ -61,7 +66,7 @@ const Modal = () => {
                     <div className="mt-8">
                       <div className="flow-root">
                         <ul role="list" className="-my-6 divide-y divide-gray-200">
-                          {Array.isArray(cards) && cards.map((product) => (
+                          {Array.isArray(cards) && cards.map  ((product) => ( 
                             <li
                               key={product.id}
                               className="flex py-6 cursor-pointer"
@@ -120,12 +125,12 @@ const Modal = () => {
                     </div>
                     <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                     <div className="mt-6">
-                      <a
+                      <Link to='/dashboard/payment'
                         href="#"
                         className="flex items-center justify-center rounded-md border border-transparent bg-[#0e7673] px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                       >
                         Checkout
-                      </a>
+                      </Link>
                     </div>
                     <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                       <p>
