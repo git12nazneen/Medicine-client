@@ -82,7 +82,7 @@ const AllUsers = () => {
         </span>
       </div>
       <div className="flex justify-evenly my-4">
-        <h2 className="text-3xl font-bold text-sky-500">All Customers</h2>
+        <h2 className="text-3xl font-bold text-[#0e7673]">All Customers</h2>
       </div>
 
       <div className="overflow-x-auto  border border-gray-200 dark:border-gray-700 md:rounded-lg">
