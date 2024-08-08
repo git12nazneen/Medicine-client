@@ -17,6 +17,7 @@ import AddFrom from '../dashboard/AddFrom';
 import DetailsCard from '../components/DetailsCard';
 import Card from '../components/commonCard/Card';
 import Payment from '../components/Payment';
+import CheckOutForm from '../components/CheckOutForm ';
 
 const router = createBrowserRouter([
     {
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
         {
           path:'payment',
           element:<Payment></Payment>
+        },
+        {
+          path:'checkoutform',
+          element:<CheckOutForm></CheckOutForm>
         }
       ]
     }

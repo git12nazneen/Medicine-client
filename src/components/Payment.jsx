@@ -1,20 +1,34 @@
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
-import CheckOutForm from './CheckOutForm ';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_Pk);
+const Payment = ({ onPaymentSelect }) => {
+  const [selectedOption, setSelectedOption] = useState('');
 
-const Payment = () => {
+  const handleOptionChange = (e) => {
+    setSelectedOption(e.target.value);
+    if (typeof onPaymentSelect === 'function') {
+      onPaymentSelect(e.target.value);
+    } else {
+      console.error('onPaymentSelect is not a function');
+    }
+  };
+
   return (
     <div>
-      <div>
-        <Elements stripe={stripePromise}>
-          <CheckOutForm />
-        </Elements>
-      </div>
+      <h2>Payment Options</h2>
+      <Link to='/dashboard/checkoutform'>
+        <input
+          type="radio"
+          value="cod"
+          to='/dashboard/checkoutform'
+          checked={selectedOption === 'cod'}
+          onChange={handleOptionChange}
+        />
+        Cash on Delivery
+      </Link>
+      {/* Add more payment options here if needed */}
     </div>
   );
 };
 
 export default Payment;
-

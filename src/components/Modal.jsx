@@ -1,5 +1,3 @@
-
-
 import { useState } from 'react';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
@@ -7,16 +5,15 @@ import useAuth from '../hooks/useAuth';
 import useCard from '../hooks/useCard';
 import ProductModal from './ProductModal';
 import { Link } from 'react-router-dom';
+import Payment from './Payment';
 
 const Modal = () => {
   const [open, setOpen] = useState(true);
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState('');
+  const [isPaymentOpen, setIsPaymentOpen] = useState(false); // State to handle payment modal
   const { user } = useAuth();
   const [cards] = useCard();
-
-  // const email = user.email;
-  // console.log(email)
 
   // Calculate the subtotal price (before discounts)
   const subtotalPrice = cards.reduce((total, item) => total + (parseFloat(item.price) || 0), 0);
@@ -24,8 +21,8 @@ const Modal = () => {
   // Calculate the total discount amount
   const totalDiscount = cards.reduce((total, item) => {
     const price = parseFloat(item.price) || 0;
-    const discountPercentage = parseFloat(item.discount) / 100 || 0;
-    const discountAmount = price * discountPercentage;
+    const discountPercentage = parseFloat(item.discount) || 0;
+    const discountAmount = price * (discountPercentage / 100);
     return total + discountAmount;
   }, 0);
 
@@ -34,7 +31,7 @@ const Modal = () => {
 
   return (
     <>
-      <Dialog open={open} onClose={setOpen} className="relative z-10">
+      <Dialog open={open} onClose={() => setOpen(false)} className="relative z-10">
         <DialogBackdrop
           transition
           className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity duration-500 ease-in-out"
@@ -66,7 +63,7 @@ const Modal = () => {
                     <div className="mt-8">
                       <div className="flow-root">
                         <ul role="list" className="-my-6 divide-y divide-gray-200">
-                          {Array.isArray(cards) && cards.map  ((product) => ( 
+                          {Array.isArray(cards) && cards.map((product) => (
                             <li
                               key={product.id}
                               className="flex py-6 cursor-pointer"
@@ -88,10 +85,10 @@ const Modal = () => {
                                     <h3>
                                       <a href='#'>{product.name}</a>
                                     </h3>
-                                    <p className="ml-4">{product.price}</p>
+                                    <p className="ml-4">${product.price}</p>
                                   </div>
                                   <p className="mt-1 text-sm text-gray-500">{product.company}</p>
-                                  <p className="mt-1 text-sm text-gray-500">{product.discount}</p>
+                                  <p className="mt-1 text-sm text-gray-500">{product.discount}%</p>
                                 </div>
                                 <div className="flex flex-1 items-end justify-between text-sm">
                                   <p className="text-gray-500">Qty {product.capsuleInfo}</p>
@@ -113,24 +110,24 @@ const Modal = () => {
                   <div className="border-t space-y-2 border-gray-200 px-4 py-6 sm:px-6">
                     <div className="flex justify-between text-base font-medium text-gray-900">
                       <p>Total</p>
-                      <p>${subtotalPrice}</p>
+                      <p>${subtotalPrice.toFixed(2)}</p>
                     </div>
                     <div className="flex justify-between text-base font-medium text-gray-900">
                       <p>Discount</p>
-                      <p>{totalDiscount}%</p>
+                      <p>{totalDiscount.toFixed(2)}</p>
                     </div>
                     <div className="flex justify-between text-base font-medium text-gray-900">
                       <p>Subtotal</p>
-                      <p>${totalPrice}</p>
+                      <p>${totalPrice.toFixed(2)}</p>
                     </div>
                     <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                     <div className="mt-6">
-                      <Link to='/dashboard/payment'
-                        href="#"
-                        className="flex items-center justify-center rounded-md border border-transparent bg-[#0e7673] px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                      <button
+                        onClick={() => setIsPaymentOpen(true)}
+                        className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#0e7673] px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                       >
                         Checkout
-                      </Link>
+                      </button>
                     </div>
                     <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                       <p>
@@ -181,6 +178,40 @@ const Modal = () => {
                   </div>
                 </div>
                 <ProductModal image={selectedImage} />
+              </div>
+            </div>
+          </DialogPanel>
+        </div>
+      </Dialog>
+
+      {/* Payment Modal */}
+      <Dialog open={isPaymentOpen} onClose={() => setIsPaymentOpen(false)} className="relative z-10">
+        <DialogBackdrop
+          transition
+          className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity duration-500 ease-in-out"
+        />
+        <div className="fixed inset-0 overflow-hidden flex items-center justify-center">
+          <DialogPanel
+            transition
+            className="pointer-events-auto w-screen max-w-md transform transition duration-500 ease-in-out bg-white shadow-xl"
+          >
+            <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+              <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
+                <div className="flex items-start justify-between">
+                  <DialogTitle className="text-lg font-medium text-gray-900">Payment</DialogTitle>
+                  <div className="ml-3 flex h-7 items-center">
+                    <button
+                      type="button"
+                      onClick={() => setIsPaymentOpen(false)}
+                      className="relative -m-2 p-2 text-gray-400 hover:text-gray-500"
+                    >
+                      <span className="absolute -inset-0.5" />
+                      <span className="sr-only">Close panel</span>
+                      <XMarkIcon aria-hidden="true" className="h-6 w-6" />
+                    </button>
+                  </div>
+                </div>
+                <Payment onPaymentSelect={(method) => console.log('Selected payment method:', method)} />
               </div>
             </div>
           </DialogPanel>
