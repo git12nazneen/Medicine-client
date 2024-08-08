@@ -77,7 +77,7 @@ const AllUsers = () => {
         <h2 className="text-lg font-medium text-gray-800 dark:text-white">
           Team members
         </h2>
-        <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full dark:bg-gray-800 dark:text-blue-400">
+        <span className="px-3 py-1 text-xs text-#0e7673-600 bg-#0e7673-100 rounded-full dark:bg-gray-800 dark:text-#0e7673-400">
           {users.length} users
         </span>
       </div>
@@ -96,7 +96,7 @@ const AllUsers = () => {
                 <div className="flex items-center gap-x-3">
                   <input
                     type="checkbox"
-                    className="text-blue-500 border-gray-300 rounded dark:bg-gray-900 dark:ring-offset-gray-900 dark:border-gray-700"
+                    className="text-#0e7673-500 border-gray-300 rounded dark:bg-gray-900 dark:ring-offset-gray-900 dark:border-gray-700"
                   />
                   <span>Index</span>
                 </div>
@@ -204,8 +204,8 @@ const AllUsers = () => {
                         margin: "0 4px",
                         border: "1px solid #ccc",
                         backgroundColor:
-                          currentPage === index + 1 ? "blue" : "transparent",
-                        color: currentPage === index + 1 ? "#fff" : "#333",
+                          currentPage === index + 1 ? "#0e7673" : "transparent",
+                        color: currentPage === index + 1 ? "#fff" : "#0e7673",
                         borderRadius: "4px",
                         cursor: "pointer",
                       }}

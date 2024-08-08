@@ -25,7 +25,7 @@ const Profile = () => {
             />
           </a>
 
-          <p className='p-2 uppercase px-4 text-xs text-white bg-blue-400 rounded-full'>
+          <p className='p-2 uppercase px-4 text-xs text-white bg-#0e7673-400 rounded-full'>
             {isAdmin ? 'Admin' : 'User'}
           </p>
           <p className='mt-2 text-xl font-medium text-gray-800 '>

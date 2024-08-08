@@ -23,7 +23,7 @@ const AddProduct = ({ handleSubmit, loading, handleDateChange }) => {
                 Product Name
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-blue-300 focus:outline-blue-500 rounded-md "
+                className="w-full px-4 py-3 text-gray-800 border border-#0e7673-300 focus:outline-#0e7673-500 rounded-md "
                 name="product_name"
                 id="product_name"
                 type="text"
@@ -38,7 +38,7 @@ const AddProduct = ({ handleSubmit, loading, handleDateChange }) => {
                 Company
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-blue-300 focus:outline-blue-500 rounded-md "
+                className="w-full px-4 py-3 text-gray-800 border border-#0e7673-300 focus:outline-#0e7673-500 rounded-md "
                 name="company"
                 id="company"
                 type="text"
@@ -53,7 +53,7 @@ const AddProduct = ({ handleSubmit, loading, handleDateChange }) => {
                 Original Price
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-blue-300 focus:outline-blue-500 rounded-md "
+                className="w-full px-4 py-3 text-gray-800 border border-#0e7673-300 focus:outline-#0e7673-500 rounded-md "
                 name="originalPrice"
                 id="originalPrice"
                 type="number"
@@ -67,7 +67,7 @@ const AddProduct = ({ handleSubmit, loading, handleDateChange }) => {
                 Doses
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-blue-300 focus:outline-blue-500 rounded-md "
+                className="w-full px-4 py-3 text-gray-800 border border-#0e7673-300 focus:outline-#0e7673-500 rounded-md "
                 name="doses"
                 id="doses"
                 type="text"
@@ -97,7 +97,7 @@ const AddProduct = ({ handleSubmit, loading, handleDateChange }) => {
                 Image URL
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-blue-300 focus:outline-blue-500 rounded-md "
+                className="w-full px-4 py-3 text-gray-800 border border-#0e7673-300 focus:outline-#0e7673-500 rounded-md "
                 name="image"
                 id="image"
                 type="text"
@@ -112,7 +112,7 @@ const AddProduct = ({ handleSubmit, loading, handleDateChange }) => {
                 Price
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-blue-300 focus:outline-blue-500 rounded-md "
+                className="w-full px-4 py-3 text-gray-800 border border-#0e7673-300 focus:outline-#0e7673-500 rounded-md "
                 name="price"
                 id="price"
                 type="number"
@@ -127,7 +127,7 @@ const AddProduct = ({ handleSubmit, loading, handleDateChange }) => {
                 Discount
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-blue-300 focus:outline-blue-500 rounded-md "
+                className="w-full px-4 py-3 text-gray-800 border border-#0e7673-300 focus:outline-#0e7673-500 rounded-md "
                 name="discount"
                 id="discount"
                 type="text"
@@ -142,7 +142,7 @@ const AddProduct = ({ handleSubmit, loading, handleDateChange }) => {
                 Capsule Info
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-blue-300 focus:outline-blue-500 rounded-md "
+                className="w-full px-4 py-3 text-gray-800 border border-#0e7673-300 focus:outline-#0e7673-500 rounded-md "
                 name="capsuleInfo"
                 id="capsuleInfo"
                 type="text"
@@ -158,7 +158,7 @@ const AddProduct = ({ handleSubmit, loading, handleDateChange }) => {
               </label>
               <textarea
                 id="description"
-                className="block rounded-md focus:blue-300 w-full h-32 px-4 py-3 text-gray-800 border border-blue-300 focus:outline-blue-500"
+                className="block rounded-md focus:#0e7673-300 w-full h-32 px-4 py-3 text-gray-800 border border-#0e7673-300 focus:outline-#0e7673-500"
                 name="description"
                 placeholder="Amoxicillin"
                 defaultValue="Amoxicillin"
@@ -170,7 +170,7 @@ const AddProduct = ({ handleSubmit, loading, handleDateChange }) => {
         <button
           disabled={loading}
           type="submit"
-          className="w-full p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-blue-500"
+          className="w-full p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-#0e7673-500"
         >
           {loading ? (
             <TbFidgetSpinner className="animate-spin m-auto" />

@@ -115,7 +115,7 @@
 //             </span>
 //             <input
 //               type="text"
-//               className="w-full py-2 pr-40 pl-4 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
+//               className="w-full py-2 pr-40 pl-4 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-#0e7673-400 dark:focus:border-#0e7673-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-#0e7673-300"
 //               placeholder="Search Your medicine / ঔষধ ও পণ্য সরচ করুন"
 //             />
 //           </div>
@@ -290,7 +290,7 @@ const Nav = ({ onSearch }) => {
             </span>
             <input
               type="text"
-              className="w-full py-2 pr-40 pl-4 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
+              className="w-full py-2 pr-40 pl-4 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-#0e7673-400 dark:focus:border-#0e7673-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-#0e7673-300"
               placeholder="Search Your medicine / ঔষধ ও পণ্য সরচ করুন"
               onChange={(e) => onSearch(e.target.value)}
             />

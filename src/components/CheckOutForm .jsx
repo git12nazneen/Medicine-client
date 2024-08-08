@@ -51,7 +51,7 @@ const CheckOutForm = () => {
             <input
               id="username"
               type="text"
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-#0e7673-400 focus:ring-#0e7673-300 focus:ring-opacity-40 dark:focus:border-#0e7673-300 focus:outline-none focus:ring"
               {...register('username', { required: 'Username is required' })}
             />
             {errors.username && <p className="text-red-500 text-xs mt-1">{errors.username.message}</p>}
@@ -62,7 +62,7 @@ const CheckOutForm = () => {
             <input
               id="emailAddress"
               type="email"
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-#0e7673-400 focus:ring-#0e7673-300 focus:ring-opacity-40 dark:focus:border-#0e7673-300 focus:outline-none focus:ring"
               {...register('emailAddress', { required: 'Email Address is required' })}
             />
             {errors.emailAddress && <p className="text-red-500 text-xs mt-1">{errors.emailAddress.message}</p>}
@@ -73,7 +73,7 @@ const CheckOutForm = () => {
             <input
               id="address"
               type="text"
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-#0e7673-400 focus:ring-#0e7673-300 focus:ring-opacity-40 dark:focus:border-#0e7673-300 focus:outline-none focus:ring"
               {...register('address', { required: 'Address is required' })}
             />
             {errors.address && <p className="text-red-500 text-xs mt-1">{errors.address.message}</p>}
@@ -84,7 +84,7 @@ const CheckOutForm = () => {
             <input
               id="phoneNumber"
               type="tel"
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-#0e7673-400 focus:ring-#0e7673-300 focus:ring-opacity-40 dark:focus:border-#0e7673-300 focus:outline-none focus:ring"
               {...register('phoneNumber', { required: 'Phone Number is required' })}
             />
             {errors.phoneNumber && <p className="text-red-500 text-xs mt-1">{errors.phoneNumber.message}</p>}
@@ -96,7 +96,7 @@ const CheckOutForm = () => {
               id="totalAmount"
               type="number"
               step="0.01"
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-#0e7673-400 focus:ring-#0e7673-300 focus:ring-opacity-40 dark:focus:border-#0e7673-300 focus:outline-none focus:ring"
               {...register('totalAmount', { required: 'Total Amount is required' })}
             />
             {errors.totalAmount && <p className="text-red-500 text-xs mt-1">{errors.totalAmount.message}</p>}
@@ -106,7 +106,7 @@ const CheckOutForm = () => {
             <label className="text-gray-700 dark:text-gray-200" htmlFor="paymentMethod">Payment Method</label>
             <select
               id="paymentMethod"
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-#0e7673-400 focus:ring-#0e7673-300 focus:ring-opacity-40 dark:focus:border-#0e7673-300 focus:outline-none focus:ring"
               {...register('paymentMethod', { required: 'Payment Method is required' })}
             >
               <option value="cashOnDelivery" selected>Cash on Delivery</option>
