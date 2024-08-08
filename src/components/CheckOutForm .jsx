@@ -1,10 +1,14 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import useAuth from '../hooks/useAuth';
+import useAxiosSecure from '../hooks/useAxiosSecure';
+import { useMutation } from '@tanstack/react-query';
+import toast from 'react-hot-toast';
 
 const CheckOutForm = () => {
   const { register, handleSubmit, formState: { errors }, setValue } = useForm();
   const { user } = useAuth();
+  const axiosSecure = useAxiosSecure();
 
   // Set default values when the component mounts
   React.useEffect(() => {
@@ -14,9 +18,26 @@ const CheckOutForm = () => {
     }
   }, [user, setValue]);
 
-  const onSubmit = (data) => {
-    console.log(data);
-    // Handle form submission here
+  // Mutation to post form data
+  const mutation = useMutation({
+    mutationFn: async (productData) => {
+      const { data } = await axiosSecure.post(`/payments`, productData);
+      return data;
+    },
+    onSuccess: () => {
+      toast.success('Order placed successfully!');
+    },
+    onError: () => {
+      toast.error('Failed to place order. Please try again.');
+    },
+  });
+
+  const onSubmit = async (data) => {
+    try {
+      await mutation.mutateAsync(data);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   };
 
   return (
@@ -101,8 +122,9 @@ const CheckOutForm = () => {
           <button
             type="submit"
             className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+            disabled={mutation.isLoading}
           >
-            Place an order
+            {mutation.isLoading ? 'Placing Order...' : 'Place an Order'}
           </button>
         </div>
       </form>
