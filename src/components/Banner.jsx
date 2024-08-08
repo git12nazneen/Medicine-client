@@ -80,7 +80,6 @@
 // };
 
 // export default Banner;
-
 import React from "react";
 import { Autoplay, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import "swiper/css";
@@ -91,11 +90,11 @@ import Card from "./commonCard/Card";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { useQuery } from "@tanstack/react-query";
 
-const Banner = ({ searchQuery }) => {
+const Banner = ({ searchQuery = "" }) => {
   const {
     isLoading,
     error,
-    data: products,
+    data: products = [],
   } = useQuery({
     queryKey: ["products"],
     queryFn: async () => {
@@ -115,8 +114,9 @@ const Banner = ({ searchQuery }) => {
     return <div>Error loading products</div>;
   }
 
+  // Ensure searchQuery is a string
   const filteredProducts = products.filter((product) =>
-    product.name.toLowerCase().includes(searchQuery.toLowerCase())
+    product.name?.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (

@@ -18,6 +18,7 @@ import DetailsCard from '../components/DetailsCard';
 import Card from '../components/commonCard/Card';
 import Payment from '../components/Payment';
 import CheckOutForm from '../components/CheckOutForm ';
+import ProductModal from '../components/ProductModal';
 
 const router = createBrowserRouter([
     {
@@ -44,7 +45,8 @@ const router = createBrowserRouter([
           path:'/products/:id',
           element:<Card></Card>,
           loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`)
-        }
+        },
+      
       ]
     },
     {

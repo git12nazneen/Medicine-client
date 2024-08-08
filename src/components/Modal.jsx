@@ -6,6 +6,7 @@ import useCard from '../hooks/useCard';
 import ProductModal from './ProductModal';
 import { Link } from 'react-router-dom';
 import Payment from './Payment';
+import DetailsCard from './DetailsCard';
 
 const Modal = () => {
   const [open, setOpen] = useState(true);
@@ -177,7 +178,8 @@ const Modal = () => {
                     </button>
                   </div>
                 </div>
-                <ProductModal image={selectedImage} />
+                {/* <ProductModal image={selectedImage} /> */}
+                <DetailsCard></DetailsCard>
               </div>
             </div>
           </DialogPanel>

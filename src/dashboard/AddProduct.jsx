@@ -4,6 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { TbFidgetSpinner } from "react-icons/tb";
 
 const AddProduct = ({ handleSubmit, loading, handleDateChange }) => {
+  const [selectedDoses, setSelectedDoses] = React.useState([]);
   const [startDate, setStartDate] = useState(new Date());
 
   const handleChange = (date) => {
@@ -13,6 +14,9 @@ const AddProduct = ({ handleSubmit, loading, handleDateChange }) => {
     }
   };
 
+  const handleChanges = (selectedOptions) => {
+    setSelectedDoses(selectedOptions);
+  }
   return (
     <div className="w-full p-10 min-h-[calc(100vh-60px)] flex flex-col justify-center items-center text-gray-800 rounded-xl bg-gray-50">
       <form onSubmit={handleSubmit} className="w-full max-w-4xl">
@@ -63,19 +67,31 @@ const AddProduct = ({ handleSubmit, loading, handleDateChange }) => {
               />
             </div>
             <div className="space-y-1 text-sm">
-              <label htmlFor="doses" className="block text-gray-600">
-                Doses
-              </label>
-              <input
-                className="w-full px-4 py-3 text-gray-800 border border-#0e7673-300 focus:outline-#0e7673-500 rounded-md "
-                name="doses"
-                id="doses"
-                type="text"
-                placeholder="250mg, 500mg"
-                defaultValue="250mg, 500mg"
-                required
-              />
-            </div>
+  <label htmlFor="doses" className="block text-gray-600">
+    Doses
+  </label>
+  <select
+  
+        isMulti
+        // options={doses}
+        // value={selectedDoses}
+        onChange={handleChanges}
+       
+        classNamePrefix="select"
+        placeholder="Select doses..."
+    
+    name="doses"
+    id="doses"
+    className="basic-multi-select w-full px-4 py-3 text-gray-800 border border-gray-300 focus:outline-[#0e7673] rounded-md"
+    defaultValue=""
+    required
+  >
+    <option value="" disabled>Select dose</option>
+    <option value="250mg">250mg</option>
+    <option value="500mg">500mg</option>
+    <option value="600mg">600mg</option>
+  </select>
+</div>
 
             <div className="space-y-1">
               <label htmlFor="date" className="block text-gray-600">
@@ -170,7 +186,7 @@ const AddProduct = ({ handleSubmit, loading, handleDateChange }) => {
         <button
           disabled={loading}
           type="submit"
-          className="w-full p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-#0e7673-500"
+          className="w-full p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-[#0e7673]"
         >
           {loading ? (
             <TbFidgetSpinner className="animate-spin m-auto" />
