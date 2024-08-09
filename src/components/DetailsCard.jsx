@@ -47,7 +47,7 @@ const DetailsCard = () => {
   } = details;
 
   return (
-    <div className="h-40">
+    <div className="">
       <main className="isolate my-0 md:my-0 lg:my-32">
         {/* Hero section */}
         <div className=" flex max-w-md lg:max-w-5xl mx-auto overflow-hidden bg-gray-100 rounded-lg shadow-lg dark:bg-gray-800">

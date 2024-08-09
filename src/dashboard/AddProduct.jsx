@@ -16,7 +16,7 @@ const AddProduct = ({ handleSubmit, loading, handleDateChange }) => {
 
   const handleChanges = (selectedOptions) => {
     setSelectedDoses(selectedOptions);
-  }
+  };
   return (
     <div className="w-full p-10 min-h-[calc(100vh-60px)] flex flex-col justify-center items-center text-gray-800 rounded-xl bg-gray-50">
       <form onSubmit={handleSubmit} className="w-full max-w-4xl">
@@ -67,32 +67,44 @@ const AddProduct = ({ handleSubmit, loading, handleDateChange }) => {
               />
             </div>
             <div className="space-y-1 text-sm">
-  <label htmlFor="doses" className="block text-gray-600">
-    Doses
-  </label>
-  <select
-  
-        isMulti
-        // options={doses}
-        // value={selectedDoses}
-        onChange={handleChanges}
-       
-        classNamePrefix="select"
-        placeholder="Select doses..."
-    
-    name="doses"
-    id="doses"
-    className="basic-multi-select w-full px-4 py-3 text-gray-800 border border-gray-300 focus:outline-[#0e7673] rounded-md"
-    defaultValue=""
-    required
-  >
-    <option value="" disabled>Select dose</option>
-    <option value="250mg">250mg</option>
-    <option value="500mg">500mg</option>
-    <option value="600mg">600mg</option>
-  </select>
-</div>
-
+              <label htmlFor="doses" className="block text-gray-600">
+                Doses
+              </label>
+              <select
+                isMulti
+                // options={doses}
+                // value={selectedDoses}
+                onChange={handleChanges}
+                classNamePrefix="select"
+                placeholder="Select doses..."
+                name="doses"
+                id="doses"
+                className="basic-multi-select w-full px-4 py-3 text-gray-800 border border-gray-300 focus:outline-[#0e7673] rounded-md"
+                defaultValue=""
+                required
+              >
+                <option value="" disabled>
+                  Select dose
+                </option>
+                <option value="250mg">250mg</option>
+                <option value="500mg">500mg</option>
+                <option value="600mg">600mg</option>
+              </select>
+            </div>
+            <div className="space-y-1 text-sm">
+              <label htmlFor="originalPrice" className="block text-gray-600">
+               Packet
+              </label>
+              <input
+                className="w-full px-4 py-3 text-gray-800 border border-#0e7673-300 focus:outline-#0e7673-500 rounded-md "
+                name="originalPrice"
+                id="originalPrice"
+                type="number"
+                placeholder="10"
+                defaultValue="10"
+                required
+              />
+            </div>
             <div className="space-y-1">
               <label htmlFor="date" className="block text-gray-600">
                 Select Date
@@ -106,6 +118,7 @@ const AddProduct = ({ handleSubmit, loading, handleDateChange }) => {
                 }
               />
             </div>
+           
           </div>
           <div className="space-y-6">
             <div className="space-y-1 text-sm">
@@ -162,8 +175,8 @@ const AddProduct = ({ handleSubmit, loading, handleDateChange }) => {
                 name="capsuleInfo"
                 id="capsuleInfo"
                 type="text"
-                placeholder="30 Capsules (1 Strip)"
-                defaultValue="30 Capsules (1 Strip)"
+                placeholder="30 Capsules "
+                defaultValue="30 Capsules "
                 required
               />
             </div>
